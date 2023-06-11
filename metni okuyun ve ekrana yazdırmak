@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    FILE *dosya; // Dosya işaretçisi tanımlama
+
+    // Dosyayı yazma modunda açma
+    dosya = fopen("metin.txt", "w");
+
+    if (dosya == NULL) {
+        printf("Dosya oluşturulamadı!");
+        return 1;
+    }
+
+    // Metni dosyaya yazma
+    fprintf(dosya, "Bu bir deneme metnidir.");
+
+    // Dosyayı kapatma
+    fclose(dosya);
+
+    // Dosyayı okuma modunda tekrar açma
+    dosya = fopen("metin.txt", "r");
+
+    if (dosya == NULL) {
+        printf("Dosya açılamadı!");
+        return 1;
+    }
+
+    char metin[100];
+
+    // Metni dosyadan okuma
+    fgets(metin, 100, dosya);
+
+    // Metni ekrana yazdırma
+    printf("Okunan metin: %s", metin);
+
+    // Dosyayı kapatma
+    fclose(dosya);
+
+    return 0;
+}
