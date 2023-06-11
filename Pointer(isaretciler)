@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    int* ptrA = &a; // İşaretçi oluşturup a değişkenine işaret ettiriyoruz
+    int* ptrB = &b; // İşaretçi oluşturup b değişkenine işaret ettiriyoruz
+
+    // Değerleri işaretçiler aracılığıyla atayın
+    *ptrA = 20;
+    *ptrB = 50;
+
+    // Değerleri işaretçiler aracılığıyla ekrana yazdırın
+    printf("a = %d\n", *ptrA);
+    printf("b = %d\n", *ptrB);
+
+    return 0;
+}
